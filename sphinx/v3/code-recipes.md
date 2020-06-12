@@ -298,7 +298,7 @@ mgr = owm.weather_manager()
 my_city_id = 12345
 moscow_lat = 55.75222
 moscow_lon = 37.615555
-weather_at_moscow = owm.weather_at_coords(moscow_lat, moscow_lon).weather 
+weather_at_moscow = mgr.weather_at_coords(moscow_lat, moscow_lon).weather 
 ```
 
 ### Get weather at city IDs
@@ -310,7 +310,7 @@ from pyowm.owm import OWM
 owm = OWM('your-api-key')
 mgr = owm.weather_manager()
 my_city_id = 12345
-weather = owm.weather_at_id(my_city_id).weather 
+weather = mgr.weather_at_id(my_city_id).weather 
 ```
 
 or on a list of city IDs:
@@ -320,7 +320,7 @@ from pyowm.owm import OWM
 owm = OWM('your-api-key')
 mgr = owm.weather_manager()
 my_list_of_city_ids = [12345, 67890, 54321]
-list_of_observations = owm.weather_at_ids(my_list_of_city_ids)
+list_of_observations = mgr.weather_at_ids(my_list_of_city_ids)
 corresponding_weathers_list = [ obs.weather for obs in list_of_observations ]
 ```
 
